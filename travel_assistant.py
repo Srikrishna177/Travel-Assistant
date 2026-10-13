@@ -127,7 +127,7 @@ def get_top_attractions(city: str) -> str:
 # %%
 def build_agent_executor(verbose: bool = True) -> AgentExecutor:
     """Bind the LLM and tools into a tool-calling agent wrapped in an executor."""
-    llm = ChatAnthropic(model=MODEL_NAME, temperature=0, max_tokens=1024)
+    llm = ChatAnthropic(model=MODEL_NAME, max_tokens=1024)
     tools = [get_weather_forecast, get_top_attractions]
 
     prompt = ChatPromptTemplate.from_messages(
